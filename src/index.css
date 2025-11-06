@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Eco-themed color palette */
+    --background: 120 20% 97%;
+    --foreground: 150 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 50% 15%;
+
+    /* Vibrant emerald green primary */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Forest green secondary */
+    --secondary: 150 60% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 20% 95%;
+    --muted-foreground: 150 20% 45%;
+
+    /* Sky blue accent */
+    --accent: 200 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 20% 88%;
+    --input: 120 20% 88%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom eco gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(200 80% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(120 20% 97%), hsl(120 20% 100%));
+    
+    /* Custom shadows */
+    --shadow-eco: 0 10px 30px -10px hsl(142 76% 36% / 0.3);
+    --shadow-float: 0 4px 20px hsl(142 76% 36% / 0.15);
+
+    /* Animation timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 150 50% 15%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 120 20% 95%;
+    --sidebar-accent-foreground: 150 50% 15%;
+    --sidebar-border: 120 20% 88%;
+    --sidebar-ring: 142 76% 36%;
+  }
+
+  .dark {
+    --background: 150 50% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 150 40% 12%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 150 40% 12%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 50% 20%;
+    --secondary-foreground: 120 20% 95%;
+
+    --muted: 150 40% 15%;
+    --muted-foreground: 120 20% 65%;
+
+    --accent: 200 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 40% 20%;
+    --input: 150 40% 20%;
+    --ring: 142 76% 45%;
+    
+    --sidebar-background: 150 50% 10%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 142 76% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 40% 15%;
+    --sidebar-accent-foreground: 120 20% 95%;
+    --sidebar-border: 150 40% 20%;
+    --sidebar-ring: 142 76% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .eco-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-eco {
+    box-shadow: var(--shadow-eco);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
